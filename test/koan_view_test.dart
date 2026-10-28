@@ -31,7 +31,7 @@ final _way = Way(
   categories: [Category(id: 'row-column', title: const Tr('Rows', 'Row'), intro: const Tr('', ''), koans: [_koan])],
 );
 
-Future<AppState> _pump(WidgetTester tester) async {
+Future<AppState> _pump(WidgetTester tester, {VoidCallback? onNext}) async {
   SharedPreferences.setMockInitialValues({});
   final state = await AppState.load();
   await tester.binding.setSurfaceSize(const Size(1200, 1000));
@@ -39,7 +39,7 @@ Future<AppState> _pump(WidgetTester tester) async {
     state: state,
     child: MaterialApp(
       localizationsDelegates: AppLocalizations.localizationsDelegates,
-      home: Scaffold(body: KoanView(way: _way, category: _way.categories.single, index: 0)),
+      home: Scaffold(body: KoanView(way: _way, category: _way.categories.single, index: 0, onNext: onNext)),
     ),
   ));
   await tester.pump();
@@ -88,5 +88,27 @@ void main() {
     await _answer(tester, 'MainAxisAlignment.end');
     expect(find.byType(LayoutInspector), findsNWidgets(2));
     expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('solving opens a dialog that explains, then moves on', (tester) async {
+    var nexts = 0;
+    await _pump(tester, onNext: () => nexts++);
+    await _answer(tester, 'MainAxisAlignment.center');
+    await tester.pumpAndSettle();
+    expect(find.byType(Dialog), findsOneWidget);
+    expect(find.text('center puts the free space on both sides.'), findsOneWidget);
+
+    // Escape stays on the koan; the Why button brings the dialog back.
+    await tester.sendKeyEvent(LogicalKeyboardKey.escape);
+    await tester.pumpAndSettle();
+    expect(find.byType(Dialog), findsNothing);
+    expect(nexts, 0);
+    await tester.tap(find.text('Why'));
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.text('Next').last);
+    await tester.pumpAndSettle();
+    expect(find.byType(Dialog), findsNothing);
+    expect(nexts, 1);
   });
 }

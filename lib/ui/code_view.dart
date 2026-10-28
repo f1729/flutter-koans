@@ -539,3 +539,52 @@ class BlankFieldState extends State<BlankField> {
     );
   }
 }
+
+/// Koan code with the answers in place of the blanks, highlighted.
+class SolvedCode extends StatelessWidget {
+  const SolvedCode({super.key, required this.code, required this.answers});
+
+  final String code;
+  final List<String> answers;
+
+  @override
+  Widget build(BuildContext context) {
+    final style = codeStyle(size: 14).copyWith(height: 1.7);
+    var blank = 0;
+    return Container(
+      width: double.infinity,
+      decoration: BoxDecoration(
+        color: Palette.ink,
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: Palette.line),
+      ),
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 14),
+        child: Text.rich(
+          TextSpan(children: [
+            for (final token in tokenizeDart(code))
+              if (token.kind == TokenKind.blank)
+                TextSpan(
+                  text: blank < answers.length ? answers[blank++] : token.text,
+                  style: style.copyWith(
+                    color: Palette.jade,
+                    fontWeight: FontWeight.w700,
+                    backgroundColor: Palette.jade.withValues(alpha: 0.12),
+                  ),
+                )
+              else
+                TextSpan(
+                  text: token.text,
+                  style: style.copyWith(
+                    color: colorFor(token.kind),
+                    fontStyle: token.kind == TokenKind.comment ? FontStyle.italic : null,
+                  ),
+                ),
+          ]),
+          softWrap: false,
+        ),
+      ),
+    );
+  }
+}
