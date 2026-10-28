@@ -1,0 +1,16 @@
+// Cloudflare Pages: https://flutterkoans.pages.dev
+// Pages serves index.html for deep links such as /dart/maps/3 because the
+// build has no 404.html, and the Flutter router takes it from there.
+// functions/ holds the /api/events endpoint; migrations/ its D1 schema.
+{
+  "name": "flutterkoans",
+  "pages_build_output_dir": "build/web",
+  "compatibility_date": "2026-10-19",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "flutterkoans",
+      "database_id": "1f1e241d-11dc-4346-b73f-07ab589d09b2"
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "@@locale": "en",
+  "appTitle": "Flutter Koans",
+  "homeTagline": "Fill in the blanks. Meditate on the result. Move on.",
+  "homeIntro": "Each koan is a small truth about Dart or Flutter with a piece missing. Type what belongs in the blank and press Enter. When reality agrees with you, the next koan appears.",
+  "chooseYourWay": "Choose your way",
+  "begin": "Begin",
+  "continueWay": "Continue",
+  "walkAgain": "Walk again",
+  "koanCount": "{solved} of {total, plural, =1{1 koan} other{{total} koans}}",
+  "@koanCount": {
+    "placeholders": {
+      "solved": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "categoryCount": "{count, plural, =1{1 category} other{{count} categories}}",
+  "@categoryCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "koanPosition": "Koan {current} of {total}",
+  "@koanPosition": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "meditate": "Meditate",
+  "next": "Next",
+  "previous": "Previous",
+  "showMe": "Show me",
+  "hint": "Hint",
+  "yours": "Yours",
+  "goal": "Goal",
+  "previewInvalid": "Type a value to see it here",
+  "pressEnterToCheck": "Press Enter to check your answer",
+  "suggestions": "Suggestions",
+  "suggestionsFooter": "↑↓ browse · Enter choose · Esc close",
+  "noSuggestions": "No suggestions here: this blank wants a value, not a name.",
+  "solved": "Reality agrees with you.",
+  "solvedNext": "Press Enter to continue.",
+  "wrong": "Not quite. Meditate on it a little longer.",
+  "wrongAgain": "Still not quite. A hint may help, or you may ask to be shown.",
+  "answerRevealed": "Here is the answer. Study it, then press Enter.",
+  "numberKind": "So close: the number is right, but is it an int or a double?",
+  "errorEmpty": "Every blank needs an answer.",
+  "errorUnexpectedChar": "The character “{char}” cannot be part of an answer.",
+  "@errorUnexpectedChar": {
+    "placeholders": {
+      "char": {
+        "type": "String"
+      }
+    }
+  },
+  "errorUnterminatedString": "This string is never closed.",
+  "errorUnexpectedEnd": "This answer ends too soon. Is a bracket missing?",
+  "errorUnexpectedToken": "“{token}” was not expected here. Answers are values, not expressions.",
+  "@errorUnexpectedToken": {
+    "placeholders": {
+      "token": {
+        "type": "String"
+      }
+    }
+  },
+  "errorUnknownName": "“{name}” is not something this koan knows.",
+  "@errorUnknownName": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "categoryComplete": "You have completed {category}.",
+  "@categoryComplete": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "wayComplete": "You have walked the whole way.",
+  "wayCompleteBody": "Every koan in {way} has been solved. Knowledge is a path, not a destination: return whenever you wish.",
+  "@wayCompleteBody": {
+    "placeholders": {
+      "way": {
+        "type": "String"
+      }
+    }
+  },
+  "walkOtherWay": "Walk {way}",
+  "@walkOtherWay": {
+    "placeholders": {
+      "way": {
+        "type": "String"
+      }
+    }
+  },
+  "backHome": "Back home",
+  "categories": "Categories",
+  "language": "Language",
+  "resetProgress": "Reset progress",
+  "resetProgressConfirm": "Forget every solved koan? This cannot be undone.",
+  "cancel": "Cancel",
+  "reset": "Reset",
+  "inspiredBy": "Inspired by ClojureScript Koans",
+  "notFound": "This path leads nowhere.",
+  "why": "Why",
+  "readDocs": "Read the docs",
+  "capstone": "Final challenge",
+  "kindKeyword": "keyword",
+  "kindType": "type",
+  "kindMethod": "method",
+  "kindProperty": "property",
+  "kindValue": "value",
+  "kindConstructor": "constructor",
+  "wrongSuggest": "Still not quite. Here is what can go in this blank: browse it and watch what changes.",
+  "pressEnterOrShortcut": "Press Enter to check your answer, or {shortcut} for suggestions",
+  "@pressEnterOrShortcut": {
+    "placeholders": {
+      "shortcut": {
+        "type": "String"
+      }
+    }
+  },
+  "showLayout": "Show layout",
+  "compareGoal": "Compare with goal",
+  "review": "Review",
+  "reviewDue": "{count, plural, =1{1 koan to review} other{{count} koans to review}}",
+  "@reviewDue": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reviewWaiting": "{count, plural, =1{1 koan waiting for a later review} other{{count} koans waiting for a later review}}",
+  "@reviewWaiting": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reviewIntro": "Koans you struggled with, back for another look. Answer right the first time and they come back less often.",
+  "reviewProgress": "Review {current} of {total}",
+  "@reviewProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "reviewDone": "All caught up.",
+  "reviewDoneBody": "Koans you struggle with come back here after 10 minutes, then 1, 3, 7 and 21 days, until they feel easy.",
+  "backToWay": "Back to {way}",
+  "@backToWay": {
+    "placeholders": {
+      "way": {
+        "type": "String"
+      }
+    }
+  },
+  "privacyNote": "Anonymous answers are counted to improve the koans."
+}

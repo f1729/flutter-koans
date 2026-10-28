@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="$FLUTTER_BASE_HREF">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Learn Dart and Flutter by filling in the blanks. Koans in English and Bahasa Indonesia, inspired by ClojureScript Koans.">
+  <meta name="theme-color" content="#0E1014">
+  <meta property="og:title" content="Flutter Koans">
+  <meta property="og:description" content="Learn Dart and Flutter by filling in the blanks. Meditate on the result. Move on.">
+  <meta property="og:type" content="website">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Flutter Koans">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="manifest" href="manifest.json">
+  <title>Flutter Koans</title>
+
+  <style>
+    html, body { margin: 0; height: 100%; background: #0E1014; }
+    #splash {
+      position: fixed; inset: 0; display: flex; align-items: center; justify-content: center;
+      transition: opacity 400ms ease;
+    }
+    #splash.gone { opacity: 0; pointer-events: none; }
+    #splash path {
+      stroke-dasharray: 116; stroke-dashoffset: 116;
+      animation: draw 1.6s ease-in-out infinite alternate;
+    }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    @media (prefers-reduced-motion: reduce) {
+      #splash path { animation: none; stroke-dashoffset: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div id="splash" aria-label="Loading Flutter Koans">
+    <svg width="72" height="72" viewBox="0 0 64 64">
+      <path d="M38.6 13.2 A20 20 0 1 1 25.4 13.2" fill="none" stroke="#3DD6C6" stroke-width="5" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <script>
+    window.addEventListener('flutter-first-frame', () => {
+      const splash = document.getElementById('splash');
+      splash.classList.add('gone');
+      setTimeout(() => splash.remove(), 500);
+    });
+  </script>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>
